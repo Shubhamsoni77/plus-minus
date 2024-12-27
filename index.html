@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus Minus</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .main{
+        width: 100vw;
+        height: 50vh;
+        text-align: center;
+        /* display: flex; */
+    }
+    .box{
+        width: 100vw;
+        height: 50vh;
+        background-color: rgb(99, 95, 160);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        border: 5px solid black;
+
+    }
+    .box2{
+        width: 100vw;
+        height: 50vh;
+        font-size: 60px;
+        background-color: rgb(249, 161, 176);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid black;
+
+    }
+    button{
+        width: 20vw;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 90px;
+        border-radius: 40px;
+        border: 4px solid rgb(172, 227, 62);
+        color: yellowgreen;
+    }
+    .box button:nth-child(2){
+        font-size: 35px;
+        color: orange;
+        border: 5px solid pink;
+    }
+    
+</style>
+<body>
+    <audio src="./mixkit-modern-technology-select-3124.wav"></audio>
+    <div class="main">
+        
+        <div class="box2">
+            <h1>0</h1>
+        </div>
+        
+        <div class="box">
+            
+                <button onclick="minus(),playSound()">-</button>
+
+                <button onclick="reset()">Reset</button>
+            
+                <button onclick="plus(),playSound()">+</button>
+            
+        </div>
+
+    </div>
+
+    <script>
+
+        let h1 = document.querySelector('h1')
+        let count = 0
+
+        const button = document.querySelector('button')
+        const audio = document.querySelector('audio')
+        console.log(audio)
+
+        function plus(){
+            count = count + 1
+            h1.innerText = count
+            console.log(count)
+        }
+
+        function minus(){
+           if(count>0){
+            count = count - 1
+            h1.innerText = count
+            console.log(count)
+           }
+        }
+
+        function reset(){
+            count = 0
+            h1.innerText = count
+           }
+        // console.log(count)
+
+        const playSound = ()=>{
+            audio.autoplay = true;
+            audio.load()
+        }
+
+
+    </script>
+</body>
+</html>
